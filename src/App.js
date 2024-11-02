@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './screens/Home';
+import Login from './screens/Login'; // Import the Login component
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import '../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css'  // Import the dark theme
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
